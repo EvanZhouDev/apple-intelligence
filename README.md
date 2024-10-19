@@ -4,6 +4,14 @@ The NPM package to interact with Apple Intelligence through JavaScript.
 
 > _Note_: This is powered through **app automation**. It will only work locally on Mac devices. Learn more about [how this works](#how-does-this-work).
 
+## Installation
+
+Simply run the following command, with your favorite JS package manager!
+
+```
+npm install apple-intelligence
+```
+
 ## API
 
 This package gives you access to 4 Apple Intelligence Writing Tool commands (Rewrite, Make Friendly, Make Professional, Make Concise), as well as the ability to directly ask a query to or chat with Apple Intelligence through a Prompt Injection. **All methods are asynchronous**.
