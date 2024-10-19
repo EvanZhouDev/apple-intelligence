@@ -5,20 +5,17 @@ export let friendly = askAppleIntelligence("Make Friendly");
 export let professional = askAppleIntelligence("Make Professional");
 export let concise = askAppleIntelligence("Make Concise");
 
-export let askAI = async (
-	prompt,
-	{ history, command } = { history: [], command: "Rewrite" }
-) =>
-	await askAppleIntelligence(command)(
-		`A conversation between user and assistant. Continue with informational reply or answer.${history.map(
-			([user, assistant]) => `user ${user} assistant ${assistant}`
-		)} user ${prompt}`
+export let askAI = async (prompt, { history = [], command = rewrite } = {}) =>
+	await command(
+		`A conversation between user and assistant. Continue with informational reply or answer.${history
+			.map(([user, assistant]) => ` user ${user} assistant ${assistant}`)
+			.join("")} user ${prompt}`
 	);
 
 export class Chat {
 	#command;
 
-	constructor(history = [], command = "Rewrite") {
+	constructor({ history = [], command = rewrite } = {}) {
 		this.history = history;
 		this.#command = command;
 	}
